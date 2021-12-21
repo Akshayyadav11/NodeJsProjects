@@ -6,9 +6,13 @@
 // console.log(c);
 
 var http = require('http')
+var calc = require('./calc.js')
 
 http.createServer(function(req, res) {
-    res.write("welcome");
+    result = calc.add(1, 1)
+    res.write("Result : " + result);
+
+
     res.end()
 
 }).listen(9000)
