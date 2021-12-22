@@ -1,18 +1,16 @@
-// let a = 1,
-//     b = 2,
-//     c
-// console.log('Addition is:')
-// c = a + b
-// console.log(c);
+var express = require('express')
 
-var http = require('http')
-var calc = require('./calc.js')
-
-http.createServer(function(req, res) {
-    result = calc.add(1, 1)
-    res.write("Result : " + result);
+var app = express()
 
 
-    res.end()
+app.get('/', function(req, res) {
+    res.send('Hello world');
+})
 
-}).listen(9000)
+app.get('/alien', function(req, res) {
+    res.send('Hello alien');
+})
+
+app.listen(9000, function(req, res) {
+    console.log("server started");
+})
