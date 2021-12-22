@@ -8,7 +8,15 @@ app.get('/', function(req, res) {
 })
 
 app.get('/alien', function(req, res) {
-    res.send('Hello alien');
+    const id = req.query.id
+    res.send('Hello alien : ' + id);
+})
+
+
+app.get('/alien/:id', function(req, res) {
+    const id = req.params.id
+
+    res.send('Hello alien: ' + id);
 })
 
 app.listen(9000, function(req, res) {
